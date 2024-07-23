@@ -96,57 +96,6 @@ button:-moz-focusring,
 	outline                  : 1px dotted ButtonText;
 }
 
-header,
-ul,
-footer
-{
-	padding-inline           : clamp(1rem, -2.279rem + 13.9906vw, 10.3125rem);
-}
-
-header
-{
-	padding-block-start      : clamp(2rem, 1.4718rem + 2.2535vw, 3.5rem);
-	color                    : var(--white);
-	background-color         : var(--dark-purple);
-
-	a
-	{
-		font-weight          : 700;
-	}
-}
-
-header button
-{
-	margin-block-start       : clamp(2.3125rem, 2.566rem + -0.2817vw, 2.5rem);
-}
-
-button
-{
-	padding-inline           : 2rem;
-	padding-block            : 1.5rem;
-	font-weight              : 700;
-	line-height              : 0.7222;
-	color                    : var(--dark-purple);
-	background-color         : var(--eucalyptus);
-}
-
-button::before,
-button::after
-{
-	content                  : "";
-	display                  : table;
-}
-
-button::before
-{
-	margin-block-end         : -0.023em;
-}
-
-button::after
-{
-	margin-block-start       : 0.023em;
-}
-
 code,
 kbd,
 samp
@@ -158,54 +107,6 @@ samp
 details
 {
 	display                  : block;
-}
-
-footer
-{
-	margin-block-start       : clamp(4.625rem, 4.493rem + 0.5634vw, 5rem);
-	padding-block-end        : clamp(4rem, 2.9877rem + 4.3192vw, 6.875rem);
-}
-
-h1, h2, h3,
-.heading-l, .heading-m, .heading-s
-{
-	font-family              : "Fraunces 144pt", serif;
-	font-weight              : 600;
-}
-
-h1, .heading-l
-{
-	font-size                : clamp(3.125rem, 2.4648rem + 2.8169vw, 5rem);
-	line-height              : 1;
-}
-
-h2, .heading-m
-{
-	font-size                : clamp(2rem, 1.4718rem + 2.2535vw, 3.5rem);
-	line-height              : 1.143;
-}
-
-h3, .heading-s
-{
-	font-size                : clamp(1.75rem, 1.662rem + 0.3756vw, 2rem);
-	line-height              : 1.25;
-}
-
-header > div:nth-child(2)
-{
-	max-inline-size          : clamp(21.4375rem, 15.0114rem + 27.4178vw, 39.6875rem);
-	margin-block-start       : clamp(3.4375rem, 4.1981rem + -0.8451vw, 4rem);
-}
-
-[alt="A cellphone"]
-{
-	inline-size              : clamp(20rem, 10.1629rem + 41.9718vw, 47.9375rem);
-	margin-block-start       : clamp(3.125rem, 4.3081rem + -1.3146vw, 4rem);
-}
-
-[alt="Louis Graham's portrait"]
-{
-	inline-size          : clamp(17.5625rem, 13.2491rem + 18.4038vw, 29.8125rem);
 }
 
 hr
@@ -230,86 +131,6 @@ legend
 	max-width                : 100%;
 	padding                  : 0;
 	white-space              : normal;
-}
-
-li
-{
-	list-style               : none;
-}
-
-ul
-{
-	counter-reset            : count 0;
-	padding-block-start       : clamp(4rem, 3.4278rem + 2.4413vw, 5.625rem);
-	padding-block-end        : clamp(4.5rem, 2.3213rem + 9.2958vw, 10.6875rem);
-	background-color         : var(--ghost-white);
-}
-
-ul + div
-{
-	display                  : grid;
-	grid-template-rows       : 173px auto;
-	grid-template-columns    : 382px 94px auto;
-	max-inline-size          : fit-content;
-	margin-block-start       : clamp(6.25rem, 6.0299rem + 0.939vw, 6.875rem);
-
-	> img
-	{
-		grid-column          : 1 / 3;
-	}
-
-	> div
-	{
-		grid-row             : 2;
-		grid-column          : 2 / -1;
-		color                : var(--white);
-		background-color     : var(--dark-purple);
-	}
-}
-
-li
-{
-	counter-increment        : count 1;
-}
-
-li > h2
-{
-	margin-block-start       : clamp(1.5rem, 0.7958rem + 3.0047vw, 3.5rem);
-}
-
-li > p
-{
-	margin-block-start       : clamp(1rem, 0.7359rem + 1.1268vw, 1.75rem);
-}
-
-li::before
-{
-	--size                   : clamp(3rem, 2.8239rem + 0.7512vw, 3.5rem);
-
-	content                  : counter(count, decimal);
-	display                  : inline-block;
-	inline-size              : var(--size);
-	font-family              : "Fraunces 144pt", serif;
-	font-size                : clamp(1.25rem, 1.162rem + 0.3756vw, 1.5rem);
-	line-height              : var(--size);
-	border                   : 1px solid;
-	border-radius            : 50%;
-}
-
-main > div > div
-{
-	max-inline-size          : fit-content;
-	padding                  : clamp(2rem, 1.2958rem + 3.0047vw, 4rem);
-
-	> * + *
-	{
-		margin-block-start   : clamp(1.5rem, 1.3239rem + 0.7512vw, 2rem);
-	}
-
-	p
-	{
-		max-inline-size      : 55ch;
-	}
 }
 
 main
@@ -400,6 +221,191 @@ textarea
 [type="search"]::-webkit-search-decoration
 {
 	-webkit-appearance       : none;
+}
+
+/* --------------------------------------------------------------------------- */
+
+header,
+ul,
+footer
+{
+	padding-inline           : clamp(1rem, -2.279rem + 13.9906vw, 10.3125rem);
+}
+
+header
+{
+	position                 : relative;
+	padding-block-start      : clamp(2rem, 1.4718rem + 2.2535vw, 3.5rem);
+	padding-block-end        : clamp(8.6875rem, 6.0687rem + 11.1737vw, 16.125rem);
+	color                    : var(--white);
+	background-color         : var(--dark-purple);
+
+	a
+	{
+		font-weight          : 700;
+	}
+}
+
+header button
+{
+	margin-block-start       : clamp(2.3125rem, 2.566rem + -0.2817vw, 2.5rem);
+}
+
+header > div:nth-child(2)
+{
+	max-inline-size          : clamp(21.4375rem, 15.0114rem + 27.4178vw, 39.6875rem);
+	margin-block-start       : clamp(3.4375rem, 4.1981rem + -0.8451vw, 4rem);
+}
+
+h1, h2, h3,
+.heading-l, .heading-m, .heading-s
+{
+	font-family              : "Fraunces 144pt", serif;
+	font-weight              : 600;
+}
+
+h1, .heading-l
+{
+	font-size                : clamp(3.125rem, 2.4648rem + 2.8169vw, 5rem);
+	line-height              : 1;
+}
+
+h2, .heading-m
+{
+	font-size                : clamp(2rem, 1.4718rem + 2.2535vw, 3.5rem);
+	line-height              : 1.143;
+}
+
+h3, .heading-s
+{
+	font-size                : clamp(1.75rem, 1.662rem + 0.3756vw, 2rem);
+	line-height              : 1.25;
+}
+
+button
+{
+	padding-inline           : 2rem;
+	padding-block            : 1.5rem;
+	font-weight              : 700;
+	line-height              : 0.7222;
+	color                    : var(--dark-purple);
+	background-color         : var(--eucalyptus);
+}
+
+button::before,
+button::after
+{
+	content                  : "";
+	display                  : table;
+}
+
+button::before
+{
+	margin-block-end         : -0.023em;
+}
+
+button::after
+{
+	margin-block-start       : 0.023em;
+}
+
+footer
+{
+	margin-block-start       : clamp(4.625rem, 4.493rem + 0.5634vw, 5rem);
+	padding-block-end        : clamp(4rem, 2.9877rem + 4.3192vw, 6.875rem);
+}
+
+li
+{
+	list-style               : none;
+}
+
+li
+{
+	counter-increment        : count 1;
+}
+
+li > h2
+{
+	margin-block-start       : clamp(1.5rem, 0.7958rem + 3.0047vw, 3.5rem);
+}
+
+li > p
+{
+	margin-block-start       : clamp(1rem, 0.7359rem + 1.1268vw, 1.75rem);
+}
+
+li::before
+{
+	--size                   : clamp(3rem, 2.8239rem + 0.7512vw, 3.5rem);
+
+	content                  : counter(count, decimal);
+	display                  : inline-block;
+	inline-size              : var(--size);
+	font-family              : "Fraunces 144pt", serif;
+	font-size                : clamp(1.25rem, 1.162rem + 0.3756vw, 1.5rem);
+	line-height              : var(--size);
+	border                   : 1px solid;
+	border-radius            : 50%;
+}
+
+main > div > div
+{
+	max-inline-size          : fit-content;
+	padding                  : clamp(2rem, 1.2958rem + 3.0047vw, 4rem);
+
+	> * + *
+	{
+		margin-block-start   : clamp(1.5rem, 1.3239rem + 0.7512vw, 2rem);
+	}
+
+	p
+	{
+		max-inline-size      : 55ch;
+	}
+}
+
+ul
+{
+	counter-reset            : count 0;
+	padding-block-start      : clamp(10.8125rem, 7.5114rem + 14.0845vw, 20.1875rem);
+	padding-block-end        : clamp(4.5rem, 2.3213rem + 9.2958vw, 10.6875rem);
+	background-color         : var(--ghost-white);
+}
+
+[alt="A cellphone"]
+{
+	position                 : absolute;
+	left                     : 50%;
+	transform                : translate(-50%, clamp(3.125rem, 4.3081rem + -1.3146vw, 4rem));
+	inline-size              : clamp(20rem, 10.1629rem + 41.9718vw, 47.9375rem);
+}
+
+[alt="Louis Graham's portrait"]
+{
+	inline-size              : clamp(17.5625rem, 13.2491rem + 18.4038vw, 29.8125rem);
+}
+
+ul + div
+{
+	display                  : grid;
+	grid-template-rows       : 173px auto;
+	grid-template-columns    : 382px 94px auto;
+	max-inline-size          : fit-content;
+	margin-block-start       : clamp(6.25rem, 6.0299rem + 0.939vw, 6.875rem);
+
+	> img
+	{
+		grid-column          : 1 / 3;
+	}
+
+	> div
+	{
+		grid-row             : 2;
+		grid-column          : 2 / -1;
+		color                : var(--white);
+		background-color     : var(--dark-purple);
+	}
 }
 
 /* --------------------------------------------------------------------------- */
