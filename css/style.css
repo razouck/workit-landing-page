@@ -152,7 +152,9 @@ textarea
 body
 {
 	font-family              : Manrope, sans-serif;
+	/*                         18px   */
 	font-size                : 1.125rem;
+	/*                         32px*/
 	line-height              : 1.778;
 }
 
@@ -165,6 +167,7 @@ strong
 button
 {
 	font-weight              : 700;
+	/*                         13px */
 	line-height              : 0.7222;
 }
 
@@ -238,27 +241,34 @@ h1, h2, h3,
 
 h1, .heading-l
 {
+	/*                               50px                            80px*/
 	font-size                : clamp(3.125rem, 2.4648rem + 2.8169vw, 5rem);
 	line-height              : 1;
 }
 
 h2, .heading-m
 {
+	/*                               32px                        56px  */
 	font-size                : clamp(2rem, 1.4718rem + 2.2535vw, 3.5rem);
+	/*                         37px*/
 	line-height              : 1.143;
 }
 
 h3, .heading-s
 {
+	/*                               28px                          32px*/
 	font-size                : clamp(1.75rem, 1.662rem + 0.3756vw, 2rem);
+	/*                         35px*/
 	line-height              : 1.25;
 }
 
 li::before
 {
+	/*                               48px                        56px  */
 	--size                   : clamp(3rem, 2.8239rem + 0.7512vw, 3.5rem);
 
 	font-family              : "Fraunces 144pt", serif;
+	/*                               20px                          24px  */
 	font-size                : clamp(1.25rem, 1.162rem + 0.3756vw, 1.5rem);
 	line-height              : var(--size);
 }
@@ -270,47 +280,59 @@ header,
 ul,
 footer
 {
+	/*                               16px                         165px     */
 	padding-inline           : clamp(1rem, -2.279rem + 13.9906vw, 10.3125rem);
 }
 
 header
 {
 	position                 : relative;
+	/*                               32px                        56px  */
 	padding-block-start      : clamp(2rem, 1.4718rem + 2.2535vw, 3.5rem);
+	/*                               139px                             258px    */
 	padding-block-end        : clamp(8.6875rem, 6.0687rem + 11.1737vw, 16.125rem);
 
 }
 
 header button
 {
+	/*                               37px                             40px  */
 	margin-block-start       : clamp(2.3125rem, 2.566rem + -0.2817vw, 2.5rem);
 }
 
 header > div:nth-child(2)
 {
+	/*                               343px                               635px     */
 	max-inline-size          : clamp(21.4375rem, 15.0114rem + 27.4178vw, 39.6875rem);
+	/*                               55px                              64px*/
 	margin-block-start       : clamp(3.4375rem, 4.1981rem + -0.8451vw, 4rem);
 }
 
 button
 {
+	/*                         32px*/
 	padding-inline           : 2rem;
+	/*                         24px */
 	padding-block            : 1.5rem;
 }
 
 footer
 {
+	/*                               74px                           80px*/
 	margin-block-start       : clamp(4.625rem, 4.493rem + 0.5634vw, 5rem);
+	/*                               64px                        110px   */
 	padding-block-end        : clamp(4rem, 2.9877rem + 4.3192vw, 6.875rem);
 }
 
 li > h2
 {
+	/*                               24px                          56px  */
 	margin-block-start       : clamp(1.5rem, 0.7958rem + 3.0047vw, 3.5rem);
 }
 
 li > p
 {
+	/*                               16px                        28px   */
 	margin-block-start       : clamp(1rem, 0.7359rem + 1.1268vw, 1.75rem);
 }
 
@@ -324,10 +346,12 @@ li::before
 main > div > div
 {
 	max-inline-size          : fit-content;
+	/*                               32px                        64px*/
 	padding                  : clamp(2rem, 1.2958rem + 3.0047vw, 4rem);
 
 	> * + *
 	{
+		/*                           24px                          32px*/
 		margin-block-start   : clamp(1.5rem, 1.3239rem + 0.7512vw, 2rem);
 	}
 
@@ -340,7 +364,9 @@ main > div > div
 ul
 {
 	counter-reset            : count 0;
+	/*                               173px                              323px     */
 	padding-block-start      : clamp(10.8125rem, 7.5114rem + 14.0845vw, 20.1875rem);
+	/*                               72px                          171px     */
 	padding-block-end        : clamp(4.5rem, 2.3213rem + 9.2958vw, 10.6875rem);
 }
 
@@ -348,12 +374,15 @@ ul
 {
 	position                 : absolute;
 	left                     : 50%;
+	/*                                               50px                             64px */
 	transform                : translate(-50%, clamp(3.125rem, 4.3081rem + -1.3146vw, 4rem));
+	/*                         320px                                765px     */
 	inline-size              : clamp(20rem, 10.1629rem + 41.9718vw, 47.9375rem);
 }
 
 [alt="Louis Graham's portrait"]
 {
+	/*                               281px                               477px     */
 	inline-size              : clamp(17.5625rem, 13.2491rem + 18.4038vw, 29.8125rem);
 }
 
@@ -364,6 +393,7 @@ ul + div
 	grid-template-rows       : 173px auto;
 	grid-template-columns    : 20.47vw 5.04vw auto;
 	max-inline-size          : fit-content;
+	/*                               100px                         110px   */
 	margin-block-start       : clamp(6.25rem, 6.0299rem + 0.939vw, 6.875rem);
 
 	> img
@@ -377,9 +407,6 @@ ul + div
 		grid-column          : 2 / -1;
 	}
 }
-
-
-/* ----------------------------------------------------------------------- */
 
 .center
 {
@@ -400,9 +427,11 @@ ul + div
 
 .switcher
 {
+	/*                         768px*/
 	--threshold              : 48rem;
 
 	flex-wrap                : wrap;
+	/*                         30px   */
 	gap                      : 1.875rem;
 }
 
