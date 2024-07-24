@@ -1,14 +1,10 @@
+/* Base ---------------------------------------------------------------------- */
+
 html
 {
-	--dark-purple            : hsl(273 85% 13%);
-	--davys-grey             : hsl(271 12% 34%);
-	--eucalyptus             : hsl(150 100% 63%);
-	--ghost-white            : hsl(276 100% 99%);
-	--white                  : hsl(0 0% 100%);
-
+	box-sizing               : border-box;
 	line-height              : 1.15;
 	-webkit-text-size-adjust : 100%;
-	box-sizing               : border-box;
 }
 
 *
@@ -20,51 +16,16 @@ html
 	box-sizing               : inherit;
 }
 
-body
-{
-	font-family              : Manrope, sans-serif;
-	font-size                : 1.125rem;
-	line-height              : 1.778;
-	color                    : var(--dark-purple);
-}
-
-a
-{
-	color                    : inherit;
-	background-color         : transparent;
-}
-
-abbr[title]
-{
-	border-bottom            : none;
-	text-decoration          : underline;
-	text-decoration          : underline dotted;
-}
-
-b,
-strong
-{
-	font-weight              : bolder;
-}
-
 button,
 input,
 optgroup,
 select,
 textarea
 {
+	margin                   : 0;
 	font-family              : inherit;
 	font-size                : 100%;
 	line-height              : 1.15;
-	margin                   : 0;
-}
-
-button,
-[type="button"],
-[type="reset"],
-[type="submit"]
-{
-	-webkit-appearance       : button;
 }
 
 button,
@@ -79,29 +40,21 @@ select
 	text-transform           : none;
 }
 
+button,
+[type="button"],
+[type="reset"],
+[type="submit"]
+{
+	-webkit-appearance       : button;
+}
+
 button::-moz-focus-inner,
 [type="button"]::-moz-focus-inner,
 [type="reset"]::-moz-focus-inner,
 [type="submit"]::-moz-focus-inner
 {
-	border-style             : none;
 	padding                  : 0;
-}
-
-button:-moz-focusring,
-[type="button"]:-moz-focusring,
-[type="reset"]:-moz-focusring,
-[type="submit"]:-moz-focusring
-{
-	outline                  : 1px dotted ButtonText;
-}
-
-code,
-kbd,
-samp
-{
-	font-family              : monospace, monospace;
-	font-size                : 1em;
+	border-style             : none;
 }
 
 details
@@ -125,11 +78,11 @@ img
 
 legend
 {
-	box-sizing               : border-box;
-	color                    : inherit;
 	display                  : table;
+	box-sizing               : border-box;
 	max-width                : 100%;
 	padding                  : 0;
+	color                    : inherit;
 	white-space              : normal;
 }
 
@@ -138,39 +91,9 @@ main
 	display                  : block;
 }
 
-pre
-{
-	font-family              : monospace, monospace;
-	font-size                : 1em;
-}
-
 progress
 {
 	vertical-align           : baseline;
-}
-
-small
-{
-	font-size                : 80%;
-}
-
-sub,
-sup
-{
-	font-size                : 75%;
-	line-height              : 0;
-	position                 : relative;
-	vertical-align           : baseline;
-}
-
-sub
-{
-	bottom                   : -0.25em;
-}
-
-sup
-{
-	top                      : -0.5em;
 }
 
 ::-webkit-file-upload-button
@@ -223,38 +146,87 @@ textarea
 	-webkit-appearance       : none;
 }
 
-/* --------------------------------------------------------------------------- */
 
-header,
-ul,
-footer
+/* Typography ---------------------------------------------------------------- */
+
+body
 {
-	padding-inline           : clamp(1rem, -2.279rem + 13.9906vw, 10.3125rem);
+	font-family              : Manrope, sans-serif;
+	font-size                : 1.125rem;
+	line-height              : 1.778;
 }
 
-header
+b,
+strong
 {
+	font-weight              : bolder;
+}
+
+button
+{
+	font-weight              : 700;
+	line-height              : 0.7222;
+}
+
+button::before,
+button::after
+{
+	content                  : "";
+	display                  : table;
+}
+
+button::before
+{
+	margin-block-end         : -0.023em;
+}
+
+button::after
+{
+	margin-block-start       : 0.023em;
+}
+
+code,
+kbd,
+samp
+{
+	font-family              : monospace, monospace;
+	font-size                : 1em;
+}
+
+pre
+{
+	font-family              : monospace, monospace;
+	font-size                : 1em;
+}
+
+small
+{
+	font-size                : 80%;
+}
+
+sub,
+sup
+{
+	font-size                : 75%;
+	line-height              : 0;
 	position                 : relative;
-	padding-block-start      : clamp(2rem, 1.4718rem + 2.2535vw, 3.5rem);
-	padding-block-end        : clamp(8.6875rem, 6.0687rem + 11.1737vw, 16.125rem);
-	color                    : var(--white);
-	background-color         : var(--dark-purple);
-
-	a
-	{
-		font-weight          : 700;
-	}
+	vertical-align           : baseline;
 }
 
-header button
+sub
 {
-	margin-block-start       : clamp(2.3125rem, 2.566rem + -0.2817vw, 2.5rem);
+	bottom                   : -0.25em;
 }
 
-header > div:nth-child(2)
+sup
 {
-	max-inline-size          : clamp(21.4375rem, 15.0114rem + 27.4178vw, 39.6875rem);
-	margin-block-start       : clamp(3.4375rem, 4.1981rem + -0.8451vw, 4rem);
+	top                      : -0.5em;
+}
+
+
+header a
+{
+	font-weight              : 700;
 }
 
 h1, h2, h3,
@@ -282,47 +254,54 @@ h3, .heading-s
 	line-height              : 1.25;
 }
 
+li::before
+{
+	--size                   : clamp(3rem, 2.8239rem + 0.7512vw, 3.5rem);
+
+	font-family              : "Fraunces 144pt", serif;
+	font-size                : clamp(1.25rem, 1.162rem + 0.3756vw, 1.5rem);
+	line-height              : var(--size);
+}
+
+
+/* Layout -------------------------------------------------------------------- */
+
+header,
+ul,
+footer
+{
+	padding-inline           : clamp(1rem, -2.279rem + 13.9906vw, 10.3125rem);
+}
+
+header
+{
+	position                 : relative;
+	padding-block-start      : clamp(2rem, 1.4718rem + 2.2535vw, 3.5rem);
+	padding-block-end        : clamp(8.6875rem, 6.0687rem + 11.1737vw, 16.125rem);
+
+}
+
+header button
+{
+	margin-block-start       : clamp(2.3125rem, 2.566rem + -0.2817vw, 2.5rem);
+}
+
+header > div:nth-child(2)
+{
+	max-inline-size          : clamp(21.4375rem, 15.0114rem + 27.4178vw, 39.6875rem);
+	margin-block-start       : clamp(3.4375rem, 4.1981rem + -0.8451vw, 4rem);
+}
+
 button
 {
 	padding-inline           : 2rem;
 	padding-block            : 1.5rem;
-	font-weight              : 700;
-	line-height              : 0.7222;
-	color                    : var(--dark-purple);
-	background-color         : var(--eucalyptus);
-}
-
-button::before,
-button::after
-{
-	content                  : "";
-	display                  : table;
-}
-
-button::before
-{
-	margin-block-end         : -0.023em;
-}
-
-button::after
-{
-	margin-block-start       : 0.023em;
 }
 
 footer
 {
 	margin-block-start       : clamp(4.625rem, 4.493rem + 0.5634vw, 5rem);
 	padding-block-end        : clamp(4rem, 2.9877rem + 4.3192vw, 6.875rem);
-}
-
-li
-{
-	list-style               : none;
-}
-
-li
-{
-	counter-increment        : count 1;
 }
 
 li > h2
@@ -337,16 +316,9 @@ li > p
 
 li::before
 {
-	--size                   : clamp(3rem, 2.8239rem + 0.7512vw, 3.5rem);
-
 	content                  : counter(count, decimal);
 	display                  : inline-block;
 	inline-size              : var(--size);
-	font-family              : "Fraunces 144pt", serif;
-	font-size                : clamp(1.25rem, 1.162rem + 0.3756vw, 1.5rem);
-	line-height              : var(--size);
-	border                   : 1px solid;
-	border-radius            : 50%;
 }
 
 main > div > div
@@ -370,7 +342,6 @@ ul
 	counter-reset            : count 0;
 	padding-block-start      : clamp(10.8125rem, 7.5114rem + 14.0845vw, 20.1875rem);
 	padding-block-end        : clamp(4.5rem, 2.3213rem + 9.2958vw, 10.6875rem);
-	background-color         : var(--ghost-white);
 }
 
 [alt="A cellphone"]
@@ -386,11 +357,12 @@ ul
 	inline-size              : clamp(17.5625rem, 13.2491rem + 18.4038vw, 29.8125rem);
 }
 
+
 ul + div
 {
 	display                  : grid;
 	grid-template-rows       : 173px auto;
-	grid-template-columns    : 382px 94px auto;
+	grid-template-columns    : 20.47vw 5.04vw auto;
 	max-inline-size          : fit-content;
 	margin-block-start       : clamp(6.25rem, 6.0299rem + 0.939vw, 6.875rem);
 
@@ -403,12 +375,11 @@ ul + div
 	{
 		grid-row             : 2;
 		grid-column          : 2 / -1;
-		color                : var(--white);
-		background-color     : var(--dark-purple);
 	}
 }
 
-/* --------------------------------------------------------------------------- */
+
+/* ----------------------------------------------------------------------- */
 
 .center
 {
@@ -445,5 +416,82 @@ ul + div
 {
 	text-align               : center;
 }
+
+
+/* Color --------------------------------------------------------------------- */
+
+html
+{
+	--dark-purple            : hsl(273 85% 13%);
+	--davys-grey             : hsl(271 12% 34%);
+	--eucalyptus             : hsl(150 100% 63%);
+	--ghost-white            : hsl(276 100% 99%);
+	--white                  : hsl(0 0% 100%);
+}
+
+body
+{
+	color                    : var(--dark-purple);
+}
+
+a
+{
+	color                    : inherit;
+	background-color         : transparent;
+}
+
+button
+{
+	color                    : var(--dark-purple);
+	background-color         : var(--eucalyptus);
+}
+
+header
+{
+	color                    : var(--white);
+	background-color         : var(--dark-purple);
+}
+
+ul
+{
+	background-color         : var(--ghost-white);
+}
+
+ul + div > div
+{
+	color                    : var(--white);
+	background-color         : var(--dark-purple);
+}
+
+
+/* Decoration ---------------------------------------------------------------- */
+
+abbr[title]
+{
+	border-bottom            : none;
+	text-decoration          : underline;
+	text-decoration          : underline dotted;
+}
+
+button:-moz-focusring,
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring
+{
+	outline                  : 1px dotted ButtonText;
+}
+
+li
+{
+	list-style               : none;
+	counter-increment        : count 1;
+}
+
+li::before
+{
+	border                   : 1px solid;
+	border-radius            : 50%;
+}
+
 
 /* --------------------------------------------------------------------------- */
