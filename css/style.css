@@ -468,6 +468,12 @@ button
 	background-color         : var(--eucalyptus);
 }
 
+button:hover
+{
+	color                    : var(--eucalyptus);
+	background-color         : var(--dark-purple);
+}
+
 header
 {
 	color                    : var(--white);
@@ -493,6 +499,20 @@ abbr[title]
 	border-bottom            : none;
 	text-decoration          : underline;
 	text-decoration          : underline dotted;
+}
+
+button
+{
+	transition               : all 100ms ease-out;
+	&:hover
+	{
+		outline              : 3px solid;
+	}
+
+	&:active
+	{
+		outline              : 5px solid;
+	}
 }
 
 button:-moz-focusring,
