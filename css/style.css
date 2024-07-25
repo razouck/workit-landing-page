@@ -16,6 +16,19 @@ html
 	box-sizing               : inherit;
 }
 
+abbr[title]
+{
+	border-bottom            : none;
+	text-decoration          : underline;
+	text-decoration          : underline dotted;
+}
+
+b,
+strong
+{
+	font-weight              : bolder;
+}
+
 button,
 input,
 optgroup,
@@ -57,16 +70,25 @@ button::-moz-focus-inner,
 	border-style             : none;
 }
 
+button:-moz-focusring,
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring
+{
+	outline                  : 1px dotted ButtonText;
+}
+
+code,
+kbd,
+samp
+{
+	font-family              : monospace, monospace;
+	font-size                : 1em;
+}
+
 details
 {
 	display                  : block;
-}
-
-hr
-{
-	box-sizing               : content-box;
-	height                   : 0;
-	overflow                 : visible;
 }
 
 img
@@ -94,6 +116,43 @@ main
 progress
 {
 	vertical-align           : baseline;
+}
+
+pre
+{
+	font-family              : monospace, monospace;
+	font-size                : 1em;
+}
+
+small
+{
+	font-size                : 80%;
+}
+
+sub,
+sup
+{
+	font-size                : 75%;
+	line-height              : 0;
+	position                 : relative;
+	vertical-align           : baseline;
+}
+
+sub
+{
+	bottom                   : -0.25em;
+}
+
+sup
+{
+	top                      : -0.5em;
+}
+
+hr
+{
+	box-sizing               : content-box;
+	height                   : 0;
+	overflow                 : visible;
 }
 
 ::-webkit-file-upload-button
@@ -158,12 +217,6 @@ body
 	line-height              : 1.778;
 }
 
-b,
-strong
-{
-	font-weight              : bolder;
-}
-
 button
 {
 	font-weight              : 700;
@@ -186,44 +239,6 @@ button::before
 button::after
 {
 	margin-block-start       : 0.023em;
-}
-
-code,
-kbd,
-samp
-{
-	font-family              : monospace, monospace;
-	font-size                : 1em;
-}
-
-pre
-{
-	font-family              : monospace, monospace;
-	font-size                : 1em;
-}
-
-small
-{
-	font-size                : 80%;
-}
-
-sub,
-sup
-{
-	font-size                : 75%;
-	line-height              : 0;
-	position                 : relative;
-	vertical-align           : baseline;
-}
-
-sub
-{
-	bottom                   : -0.25em;
-}
-
-sup
-{
-	top                      : -0.5em;
 }
 
 header a
@@ -276,8 +291,8 @@ li::before
 /* Layout -------------------------------------------------------------------- */
 
 header,
-ul,
-footer
+footer,
+.container
 {
 	/*                               16px                         165px     */
 	padding-inline           : clamp(1rem, -2.279rem + 13.9906vw, 10.3125rem);
@@ -315,12 +330,11 @@ button
 	padding-block            : 1.5rem;
 }
 
-footer
+li::before
 {
-	/*                               74px                           80px*/
-	margin-block-start       : clamp(4.625rem, 4.493rem + 0.5634vw, 5rem);
-	/*                               64px                        110px   */
-	padding-block-end        : clamp(4rem, 2.9877rem + 4.3192vw, 6.875rem);
+	content                  : counter(count, decimal);
+	display                  : inline-block;
+	inline-size              : var(--size);
 }
 
 li > h2
@@ -335,14 +349,7 @@ li > p
 	margin-block-start       : clamp(1rem, 0.7359rem + 1.1268vw, 1.75rem);
 }
 
-li::before
-{
-	content                  : counter(count, decimal);
-	display                  : inline-block;
-	inline-size              : var(--size);
-}
-
-ul
+main > div:first-child
 {
 	counter-reset            : count 0;
 	/*                               173px                              323px     */
@@ -359,18 +366,19 @@ ul
 	transform                : translate(-50%, clamp(3.125rem, 4.3081rem + -1.3146vw, 4rem));
 	/*                         320px                                765px     */
 	inline-size              : clamp(20rem, 10.1629rem + 41.9718vw, 47.9375rem);
+	z-index                  : 1;
 }
 
-main > div
+main > div > div
 {
 	position                 : relative;
 	/*                               586px                              603px     */
 	min-block-size           : clamp(36.625rem, 38.0623rem + -1.5992vw, 37.6875rem);
 	/*                         1114px  */
 	max-inline-size          : 69.625rem;
-	margin                   : auto;
+	margin-inline            : auto;
 	/*                              118px                           178px    */
-	margin-block-start      : clamp(7.375rem, 6.0521rem + 5.6444vw, 11.125rem);
+	margin-block-start       : clamp(7.375rem, 6.0521rem + 5.6444vw, 11.125rem);
 }
 
 [alt="Louis Graham's portrait"]
@@ -379,7 +387,7 @@ main > div
 	inline-size              : clamp(17.5625rem, 13.2491rem + 18.4038vw, 29.8125rem);
 }
 
-main > div > div
+main > div > div > div
 {
 	inline-size              : fit-content;
 	/*                               32px                        64px*/
@@ -398,6 +406,14 @@ main > div > div
 	{
 		max-inline-size      : 55ch;
 	}
+}
+
+footer
+{
+	/*                               74px                           80px*/
+	margin-block-start       : clamp(4.625rem, 4.493rem + 0.5634vw, 5rem);
+	/*                               64px                        110px   */
+	padding-block-end        : clamp(4rem, 2.9877rem + 4.3192vw, 6.875rem);
 }
 
 .center
@@ -479,12 +495,13 @@ header
 	background-color         : var(--dark-purple);
 }
 
-ul
+main > div:first-child
 {
 	background-color         : var(--ghost-white);
 }
 
-ul + div > div
+/* Card */
+main > div > div > div
 {
 	color                    : var(--white);
 	background-color         : var(--dark-purple);
@@ -492,13 +509,6 @@ ul + div > div
 
 
 /* Decoration ---------------------------------------------------------------- */
-
-abbr[title]
-{
-	border-bottom            : none;
-	text-decoration          : underline;
-	text-decoration          : underline dotted;
-}
 
 button
 {
@@ -514,14 +524,6 @@ button
 	}
 }
 
-button:-moz-focusring,
-[type="button"]:-moz-focusring,
-[type="reset"]:-moz-focusring,
-[type="submit"]:-moz-focusring
-{
-	outline                  : 1px dotted ButtonText;
-}
-
 li
 {
 	list-style               : none;
@@ -532,6 +534,40 @@ li::before
 {
 	border                   : 1px solid;
 	border-radius            : 50%;
+}
+
+/* Section top decoration */
+main > div:first-child
+{
+	--color                  : var(--dark-purple);
+}
+
+main > div:nth-child(2)
+{
+	--color                  : var(--ghost-white);
+}
+
+main > div
+{
+	position                 : relative;
+	overflow                 : hidden;
+
+	&::before
+	{
+		content              : "";
+
+		display              : block;
+		aspect-ratio         : 1;
+		width                : 525vw;
+		position             : absolute;
+		top                  : -520.18vw;
+		left                 : 50%;
+		transform            : translateX(-50%);
+
+		background-color     : var(--color);
+
+		border-radius        : 50%;
+	}
 }
 
 
