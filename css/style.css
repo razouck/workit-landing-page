@@ -536,6 +536,56 @@ li::before
 	border-radius            : 50%;
 }
 
+/* Underline */
+a,
+span
+{
+	--color                  : var(--eucalyptus);
+}
+
+a
+{
+	color                    : var(--eucalyptus);
+	text-decoration          : inherit;
+}
+
+.underline
+{
+	display                  : inline-block;
+	position                 : relative;
+}
+
+.underline::after
+{
+	content                  : "";
+	display                  : inline-block;
+	height                   : 0;
+	width                    : 100%;
+	position                 : absolute;
+	left                     : 0;
+	bottom                   : -2px;
+	border-top               : 3px solid var(--color, black);
+	transition               : all 100ms ease-out;
+}
+
+a.underline:active::after
+{
+	transition               : all 50ms ease-out;
+}
+
+a.underline:hover::after
+{
+	width                    : 70%;
+	left                     : 50%;
+	transform                : translateX(-50%);
+}
+
+a.underline::after,
+a.underline:active::after
+{
+	width                    : 100%;
+}
+
 /* Section top decoration */
 main > div:first-child
 {
