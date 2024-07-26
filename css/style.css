@@ -325,6 +325,14 @@ li::before
 
 /* Layout -------------------------------------------------------------------- */
 
+button
+{
+	/*                           32px*/
+	padding-inline             : 2rem;
+	/*                           24px */
+	padding-block              : 1.5rem;
+}
+
 header,
 footer,
 .container
@@ -343,12 +351,7 @@ header
 
 }
 
-header button
-{
-	/*                                 37px                             40px  */
-	margin-block-start         : clamp(2.3125rem, 2.566rem + -0.2817vw, 2.5rem);
-}
-
+/* Header text and button ------------ */
 header > div:nth-child(2)
 {
 	/*                                 343px                               635px     */
@@ -357,14 +360,13 @@ header > div:nth-child(2)
 	margin-block-start         : clamp(3.4375rem, 4.1981rem + -0.8451vw, 4rem);
 }
 
-button
+header button
 {
-	/*                           32px*/
-	padding-inline             : 2rem;
-	/*                           24px */
-	padding-block              : 1.5rem;
+	/*                                 37px                             40px  */
+	margin-block-start         : clamp(2.3125rem, 2.566rem + -0.2817vw, 2.5rem);
 }
 
+/* List ------------------------------ */
 li::before
 {
 	content                    : counter(count, decimal);
@@ -384,6 +386,7 @@ li > p
 	margin-block-start         : clamp(1rem, 0.7359rem + 1.1268vw, 1.75rem);
 }
 
+/* Second Section -------------------- */
 main > div:first-child
 {
 	counter-reset              : count 0;
@@ -404,6 +407,7 @@ main > div:first-child
 	z-index                    : 1;
 }
 
+/* Third Section --------------------- */
 main > div > div
 {
 	position                   : relative;
@@ -420,8 +424,24 @@ main > div > div
 {
 	/*                                 281px                               477px     */
 	inline-size                : clamp(17.5625rem, 13.2491rem + 18.4038vw, 29.8125rem);
+	margin-inline              : auto;
 }
 
+/*                            940px  */
+@media screen and (min-width: 58.75rem)
+{
+	[alt="Louis Graham's portrait"]
+	{
+		margin-inline          : 0;
+	}
+}
+
+main > div:nth-child(2)
+{
+	padding-block-end          : clamp(9.3125rem, 9.2023rem + 0.4704vw, 9.625rem);
+}
+
+/* Card ------------------------------ */
 main > div > div > div
 {
 	inline-size                : fit-content;
@@ -445,7 +465,6 @@ main > div > div > div
 
 footer
 {
-	padding-block-start        : clamp(9.3125rem, 9.2023rem + 0.4704vw, 9.625rem);
 	padding-block-end          : clamp(8.0625rem, 7.842rem + 0.9407vw, 8.6875rem);
 
 	> div
@@ -453,7 +472,7 @@ footer
 		max-inline-size        : fit-content;
 		margin-inline          : auto;
 
-		:nth-child(2)
+		&:nth-child(2)
 		{
 			margin-block-start : 3.75rem;
 		}
@@ -527,6 +546,12 @@ body
 	color                       : var(--dark-purple);
 }
 
+::selection
+{
+	color                       : var(--dark-purple);
+	background-color            : var(--eucalyptus);
+}
+
 a
 {
 	color                       : inherit;
@@ -592,7 +617,7 @@ li::before
 	border-radius               : 50%;
 }
 
-/* Underline */
+/* Underline ------------------------- */
 a,
 span
 {
@@ -642,18 +667,7 @@ a.underline:active::after
 	width                       : 100%;
 }
 
-/* Header background */
-@media screen and (min-width: 630px)
-{
-	header
-	{
-		background-image        : url(../img/bg-pattern-1.svg), url(../img/bg-pattern-2.svg);
-		background-repeat       : no-repeat;
-		background-position     : left clamp(-14.0625rem, -20.4196rem + 13.244vw, -8.5rem) top clamp(4.4375rem, -0.4196rem + 10.119vw, 8.6875rem), right clamp(-6.25rem, -9.8214rem + 7.4405vw, -3.125rem) top clamp(15.625rem, 9.9107rem + 11.9048vw, 20.625rem);
-	}
-}
-
-/* Section top decoration */
+/* Section top decoration ------------ */
 main > div:first-child
 {
 	--color                     : var(--dark-purple);
@@ -684,6 +698,31 @@ main > div
 		background-color        : var(--color);
 
 		border-radius           : 50%;
+	}
+}
+
+/* Pattern background ---------------- */
+@media screen and (min-width: 630px)
+{
+	header
+	{
+		background-image        : url(../img/bg-pattern-1.svg), url(../img/bg-pattern-2.svg);
+		background-repeat       : no-repeat;
+		background-position     : left clamp(-14.0625rem, -20.4196rem + 13.244vw, -8.5rem) top clamp(4.4375rem, -0.4196rem + 10.119vw, 8.6875rem), right clamp(-6.25rem, -9.8214rem + 7.4405vw, -3.125rem) top clamp(15.625rem, 9.9107rem + 11.9048vw, 20.625rem);
+	}
+
+	main > div > div > div::before
+	{
+		content                 : "";
+		display                 : block;
+		width                   : 221px;
+		height                  : 212px;
+		position                : absolute;
+		right                   : 10%;
+		bottom                  : -15%;
+		background-color        : none;
+		background-image        : url(../img/bg-pattern-3.svg);
+		pointer-events          : none;
 	}
 }
 
