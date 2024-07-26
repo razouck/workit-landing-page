@@ -642,6 +642,17 @@ a.underline:active::after
 	width                       : 100%;
 }
 
+/* Header background */
+@media screen and (min-width: 630px)
+{
+	header
+	{
+		background-image        : url(../img/bg-pattern-1.svg), url(../img/bg-pattern-2.svg);
+		background-repeat       : no-repeat;
+		background-position     : left clamp(-14.0625rem, -20.4196rem + 13.244vw, -8.5rem) top clamp(4.4375rem, -0.4196rem + 10.119vw, 8.6875rem), right clamp(-6.25rem, -9.8214rem + 7.4405vw, -3.125rem) top clamp(15.625rem, 9.9107rem + 11.9048vw, 20.625rem);
+	}
+}
+
 /* Section top decoration */
 main > div:first-child
 {
