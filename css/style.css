@@ -284,9 +284,11 @@ header a
 h1, h2, h3,
 .heading-l, .heading-m, .heading-s
 {
-	font-family               : "Fraunces 144pt", serif;
+	font-family               : "Fraunces", serif;
 	font-weight               : 600;
+	font-style                : normal;
 	font-optical-sizing       : auto;
+	font-variation-settings   : "SOFT" 0, "WONK" 1;
 }
 
 h1, .heading-l
