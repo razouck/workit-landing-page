@@ -439,7 +439,6 @@ main > div:first-child
 	z-index                     : 1;
 }
 
-
 main > div:nth-child(2)
 {
 	--color                     : var(--ghost-white);
@@ -524,6 +523,7 @@ main > div:nth-child(2)
 	padding-block-end           : clamp(7.625rem, 9.9067rem + -2.5352vw, 9.3125rem);
 }
 
+
 /* CTA ----------------------------------------------------------------------- */
 
 [alt="Louis Graham's portrait"]
@@ -564,6 +564,7 @@ main > div > div > div
 		max-inline-size         : 55ch;
 	}
 }
+
 
 /* Footer -------------------------------------------------------------------- */
 
