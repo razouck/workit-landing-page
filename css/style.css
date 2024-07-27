@@ -284,7 +284,7 @@ header a
 h1, h2, h3,
 .heading-l, .heading-m, .heading-s
 {
-	font-family               : "Fraunces 144pt", "Fraunces", serif;
+	font-family               : "Fraunces", serif;
 	font-weight               : 500;
 	font-style                : normal;
 	font-optical-sizing       : auto;
