@@ -57,6 +57,6 @@ Might add animations and adjust the layout spacing to a baseline grid.
 
 ## Author
 
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/razouck)
-- Twitter - [@yourusername](https://www.twitter.com/razouck)
-- GitHub - [@yourusername](https://www.github.com/razouck)
+- Frontend Mentor - [@razouck](https://www.frontendmentor.io/profile/razouck)
+- Twitter - [@razouck](https://www.twitter.com/razouck)
+- GitHub - [@razouck](https://www.github.com/razouck)
