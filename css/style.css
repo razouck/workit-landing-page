@@ -488,7 +488,8 @@ main > div > div
 
 main > div:nth-child(2)
 {
-	padding-block-end           : clamp(9.3125rem, 9.2023rem + 0.4704vw, 9.625rem);
+	/*                                  122px                            149px    */
+	padding-block-end           : clamp(7.625rem, 9.9067rem + -2.5352vw, 9.3125rem);
 }
 
 /* Card ------------------------------ */
