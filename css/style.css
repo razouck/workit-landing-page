@@ -286,6 +286,7 @@ h1, h2, h3,
 {
 	font-family               : "Fraunces 144pt", serif;
 	font-weight               : 600;
+	font-optical-sizing       : auto;
 }
 
 h1, .heading-l
@@ -626,7 +627,7 @@ span
 
 a
 {
-	color                       : var(--eucalyptus);
+	color                       : inherit;
 	text-decoration             : inherit;
 }
 
@@ -647,6 +648,12 @@ a
 	bottom                      : -2px;
 	border-top                  : 3px solid var(--color, black);
 	transition                  : all 100ms ease-out;
+}
+
+
+a.underline:active
+{
+	color                       : var(--color);
 }
 
 a.underline:active::after
