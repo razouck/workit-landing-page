@@ -246,7 +246,7 @@ textarea
 @font-face
 {
 	font-family                 : "Fraunces 144pt";
-	src                         : url("./fonts/subset-Fraunces144pt-SemiBold.woff2") format("woff2");
+	src                         : url("../fonts/subset-Fraunces144pt-SemiBold.woff2") format("woff2");
 	font-weight                 : 600;
 	font-style                  : normal;
 	font-display                : swap;
@@ -255,7 +255,7 @@ textarea
 @font-face
 {
 	font-family                 : "Manrope";
-	src                         : url("./fonts/subset-Manrope-Regular.woff2") format("woff2");
+	src                         : url("../fonts/subset-Manrope-Regular.woff2") format("woff2");
 	font-weight                 : normal;
 	font-style                  : normal;
 	font-display                : swap;
