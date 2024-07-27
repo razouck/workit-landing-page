@@ -1,7 +1,11 @@
-/* Base ---------------------------------------------------------------------- */
-
 html
 {
+	--dark-purple               : hsl(273 85% 13%);
+	--davys-grey                : hsl(271 12% 34%);
+	--eucalyptus                : hsl(150 100% 63%);
+	--ghost-white               : hsl(276 100% 99%);
+	--white                     : hsl(0 0% 100%);
+
 	box-sizing                  : border-box;
 	line-height                 : 1.15;
 	-webkit-text-size-adjust    : 100%;
@@ -14,6 +18,24 @@ html
 	border                      : 0;
 	outline                     : 0;
 	box-sizing                  : inherit;
+}
+
+@font-face
+{
+	font-family                 : "Fraunces 144pt";
+	src                         : url("../fonts/subset-Fraunces144pt-SemiBold.woff2") format("woff2");
+	font-weight                 : 600;
+	font-style                  : normal;
+	font-display                : swap;
+}
+
+@font-face
+{
+	font-family                 : "Manrope";
+	src                         : url("../fonts/subset-Manrope-Regular.woff2") format("woff2");
+	font-weight                 : normal;
+	font-style                  : normal;
+	font-display                : swap;
 }
 
 abbr[title]
@@ -205,62 +227,6 @@ textarea
 	-webkit-appearance          : none;
 }
 
-
-/* Content ------------------------------------------------------------------- */
-
-.workit-logo
-{
-	/*                            96px*/
-	inline-size                 : 6rem;
-	/*                            25px   */
-	block-size                  : 1.5625rem;
-	background-image            : url(../img/logo-dark.svg);
-	background-size             : cover;
-}
-
-.facebook-logo
-{
-	background-image            : url(../img/icon-facebook.svg);
-	background-size             : cover;
-}
-
-.twitter-logo
-{
-	/*                            23px    */
-	inline-size                 : 1.4375rem;
-	/*                            20px  */
-	block-size                  : 1.25rem;
-	background-image            : url(../img/icon-twitter.svg);
-	background-size             : cover;
-}
-
-.instagram-logo
-{
-	background-image            : url(../img/icon-instagram.svg);
-	background-size             : cover;
-}
-
-
-/* Typography ---------------------------------------------------------------- */
-
-@font-face
-{
-	font-family                 : "Fraunces 144pt";
-	src                         : url("../fonts/subset-Fraunces144pt-SemiBold.woff2") format("woff2");
-	font-weight                 : 600;
-	font-style                  : normal;
-	font-display                : swap;
-}
-
-@font-face
-{
-	font-family                 : "Manrope";
-	src                         : url("../fonts/subset-Manrope-Regular.woff2") format("woff2");
-	font-weight                 : normal;
-	font-style                  : normal;
-	font-display                : swap;
-}
-
 body
 {
 	font-family                 : Manrope, sans-serif;
@@ -268,6 +234,27 @@ body
 	font-size                   : 1.125rem;
 	/*                            32px*/
 	line-height                 : 1.778;
+	color                       : var(--dark-purple);
+	accent-color                : var(--eucalyptus);
+}
+
+::selection
+{
+	color                       : var(--dark-purple);
+	background-color            : var(--eucalyptus);
+}
+
+a,
+span
+{
+	--color                     : var(--eucalyptus);
+}
+
+a
+{
+	color                       : inherit;
+	background-color            : transparent;
+	text-decoration             : inherit;
 }
 
 button
@@ -275,28 +262,42 @@ button
 	font-weight                 : 700;
 	/*                            13px */
 	line-height                 : 0.7222;
-}
+	/*                            32px*/
+	padding-inline              : 2rem;
+	/*                            24px */
+	padding-block               : 1.5rem;
+	color                       : var(--dark-purple);
+	background-color            : var(--eucalyptus);
+	transition                  : all 100ms ease-out;
 
-button::before,
-button::after
-{
-	content                     : "";
-	display                     : table;
-}
+	&::before,
+	&::after
+	{
+		content                 : "";
+		display                 : table;
+	}
 
-button::before
-{
-	margin-block-end            : -0.023em;
-}
+	&::before
+	{
+		margin-block-end        : -0.023em;
+	}
 
-button::after
-{
-	margin-block-start          : 0.023em;
-}
+	&::after
+	{
+		margin-block-start      : 0.023em;
+	}
 
-header a
-{
-	font-weight                 : 700;
+	&:hover
+	{
+		color                   : var(--eucalyptus);
+		background-color        : var(--dark-purple);
+		outline                 : 3px solid;
+	}
+
+	&:active
+	{
+		outline                 : 5px solid;
+	}
 }
 
 h1, h2, h3,
@@ -329,9 +330,138 @@ h3, .heading-s
 	line-height                 : 1.25;
 }
 
+header,
+footer,
+.container
+{
+	/*                                  16px                         165px     */
+	padding-inline              : clamp(1rem, -2.279rem + 13.9906vw, 10.3125rem);
+}
+
+
+/* Header  ------------------------------------------------------------------- */
+
+header
+{
+	position                    : relative;
+	/*                                  32px                        56px  */
+	padding-block-start         : clamp(2rem, 1.4718rem + 2.2535vw, 3.5rem);
+	/*                                  139px                             258px    */
+	padding-block-end           : clamp(8.6875rem, 6.0687rem + 11.1737vw, 16.125rem);
+	color                       : var(--white);
+	background-color            : var(--dark-purple);
+}
+
+header a
+{
+	font-weight                 : 700;
+}
+
+header > div:nth-child(2)
+{
+	/*                                  343px                               635px     */
+	max-inline-size             : clamp(21.4375rem, 15.0114rem + 27.4178vw, 39.6875rem);
+	/*                                  55px                              64px*/
+	margin-block-start          : clamp(3.4375rem, 4.1981rem + -0.8451vw, 4rem);
+}
+
+header button
+{
+	/*                                  37px                             40px  */
+	margin-block-start          : clamp(2.3125rem, 2.566rem + -0.2817vw, 2.5rem);
+}
+
+li::before
+{
+	content                     : counter(count, decimal);
+	display                     : inline-block;
+	inline-size                 : var(--size);
+}
+
+li > h2
+{
+	/*                                  24px                          56px  */
+	margin-block-start          : clamp(1.5rem, 0.7958rem + 3.0047vw, 3.5rem);
+}
+
+li > p
+{
+	/*                                  16px                        28px   */
+	margin-block-start          : clamp(1rem, 0.7359rem + 1.1268vw, 1.75rem);
+}
+
+
+/* Sections ------------------------------------------------------------------ */
+
+main > div
+{
+	position                    : relative;
+	overflow                    : hidden;
+
+	&::before
+	{
+		content                 : "";
+
+		display                 : block;
+		aspect-ratio            : 1;
+		width                   : 525vw; /* Gotten from a mathematical formula */
+		position                : absolute;
+		top                     : -520.18vw;
+		left                    : 50%;
+		transform               : translateX(-50%);
+
+		background-color        : var(--color);
+
+		border-radius           : 50%;
+	}
+}
+
+
+/* Second Section ------------------------------------------------------------ */
+
+main > div:first-child
+{
+	--color                     : var(--dark-purple);
+	/*                                  173px                              323px     */
+	padding-block-start         : clamp(10.8125rem, 7.5114rem + 14.0845vw, 20.1875rem);
+	/*                                  72px                         101px     */
+	padding-block-end           : clamp(4.5rem, 3.8618rem + 2.723vw, 6.3125rem);
+	background-color            : var(--ghost-white);
+}
+
+[alt="A cellphone"]
+{
+	position                    : absolute;
+	left                        : 50%;
+	/*                                                  50px                             64px */
+	transform                   : translate(-50%, clamp(3.125rem, 4.3081rem + -1.3146vw, 4rem));
+	/*                                  320px                          765px     */
+	inline-size                 : clamp(20rem, 10.1629rem + 41.9718vw, 47.9375rem);
+	z-index                     : 1;
+}
+
+
+main > div:nth-child(2)
+{
+	--color                     : var(--ghost-white);
+}
+
 ul
 {
 	text-align                  : center;
+	counter-reset               : count 0;
+}
+
+li
+{
+	list-style                  : none;
+	counter-increment           : count 1;
+}
+
+li::before
+{
+	border                      : 1px solid;
+	border-radius               : 50%;
 }
 
 /*                            768px                  60.25px*/
@@ -375,89 +505,8 @@ li::before
 }
 
 
-/* Layout -------------------------------------------------------------------- */
+/* Third Section ------------------------------------------------------------- */
 
-button
-{
-	/*                            32px*/
-	padding-inline              : 2rem;
-	/*                            24px */
-	padding-block               : 1.5rem;
-}
-
-header,
-footer,
-.container
-{
-	/*                                  16px                         165px     */
-	padding-inline              : clamp(1rem, -2.279rem + 13.9906vw, 10.3125rem);
-}
-
-header
-{
-	position                    : relative;
-	/*                                  32px                        56px  */
-	padding-block-start         : clamp(2rem, 1.4718rem + 2.2535vw, 3.5rem);
-	/*                                  139px                             258px    */
-	padding-block-end           : clamp(8.6875rem, 6.0687rem + 11.1737vw, 16.125rem);
-}
-
-/* Header text and button ------------ */
-header > div:nth-child(2)
-{
-	/*                                  343px                               635px     */
-	max-inline-size             : clamp(21.4375rem, 15.0114rem + 27.4178vw, 39.6875rem);
-	/*                                  55px                              64px*/
-	margin-block-start          : clamp(3.4375rem, 4.1981rem + -0.8451vw, 4rem);
-}
-
-header button
-{
-	/*                                  37px                             40px  */
-	margin-block-start          : clamp(2.3125rem, 2.566rem + -0.2817vw, 2.5rem);
-}
-
-li::before
-{
-	content                     : counter(count, decimal);
-	display                     : inline-block;
-	inline-size                 : var(--size);
-}
-
-li > h2
-{
-	/*                                  24px                          56px  */
-	margin-block-start          : clamp(1.5rem, 0.7958rem + 3.0047vw, 3.5rem);
-}
-
-li > p
-{
-	/*                                  16px                        28px   */
-	margin-block-start          : clamp(1rem, 0.7359rem + 1.1268vw, 1.75rem);
-}
-
-/* Second Section -------------------- */
-main > div:first-child
-{
-	counter-reset               : count 0;
-	/*                                  173px                              323px     */
-	padding-block-start         : clamp(10.8125rem, 7.5114rem + 14.0845vw, 20.1875rem);
-	/*                                  72px                         101px     */
-	padding-block-end           : clamp(4.5rem, 3.8618rem + 2.723vw, 6.3125rem);
-}
-
-[alt="A cellphone"]
-{
-	position                    : absolute;
-	left                        : 50%;
-	/*                                                  50px                             64px */
-	transform                   : translate(-50%, clamp(3.125rem, 4.3081rem + -1.3146vw, 4rem));
-	/*                                  320px                          765px     */
-	inline-size                 : clamp(20rem, 10.1629rem + 41.9718vw, 47.9375rem);
-	z-index                     : 1;
-}
-
-/* Third Section --------------------- */
 main > div > div
 {
 	position                    : relative;
@@ -469,6 +518,14 @@ main > div > div
 	/*                                  118px                           178px    */
 	margin-block-start          : clamp(7.375rem, 6.0521rem + 5.6444vw, 11.125rem);
 }
+
+main > div:nth-child(2)
+{
+	/*                                  122px                            149px    */
+	padding-block-end           : clamp(7.625rem, 9.9067rem + -2.5352vw, 9.3125rem);
+}
+
+/* CTA ----------------------------------------------------------------------- */
 
 [alt="Louis Graham's portrait"]
 {
@@ -486,13 +543,6 @@ main > div > div
 	}
 }
 
-main > div:nth-child(2)
-{
-	/*                                  122px                            149px    */
-	padding-block-end           : clamp(7.625rem, 9.9067rem + -2.5352vw, 9.3125rem);
-}
-
-/* Card ------------------------------ */
 main > div > div > div
 {
 	inline-size                 : fit-content;
@@ -501,6 +551,8 @@ main > div > div > div
 	position                    : absolute;
 	bottom                      : 0;
 	right                       : 0;
+	color                       : var(--white);
+	background-color            : var(--dark-purple);
 
 	> * + *
 	{
@@ -513,6 +565,8 @@ main > div > div > div
 		max-inline-size         : 55ch;
 	}
 }
+
+/* Footer -------------------------------------------------------------------- */
 
 footer
 {
@@ -538,6 +592,38 @@ footer
 	}
 }
 
+.workit-logo
+{
+	/*                            96px*/
+	inline-size                 : 6rem;
+	/*                            25px   */
+	block-size                  : 1.5625rem;
+	background-image            : url(../img/logo-dark.svg);
+	background-size             : cover;
+}
+
+.facebook-logo
+{
+	background-image            : url(../img/icon-facebook.svg);
+	background-size             : cover;
+}
+
+.twitter-logo
+{
+	/*                            23px    */
+	inline-size                 : 1.4375rem;
+	/*                            20px  */
+	block-size                  : 1.25rem;
+	background-image            : url(../img/icon-twitter.svg);
+	background-size             : cover;
+}
+
+.instagram-logo
+{
+	background-image            : url(../img/icon-instagram.svg);
+	background-size             : cover;
+}
+
 .icon
 {
 	display                     : inline-block;
@@ -546,144 +632,8 @@ footer
 	aspect-ratio                : 1;
 }
 
-.center
-{
-	margin-inline               : auto;
-}
 
-.space-between,
-.switcher
-{
-	display                     : flex;
-}
-
-.space-between
-{
-	justify-content             : space-between;
-	inline-size                 : 100%;
-}
-
-.switcher
-{
-	/*                            768px*/
-	--threshold                 : 48rem;
-
-	flex-wrap                   : wrap;
-	/*                                       30px   */
-	gap                         : var(--gap, 1.875rem);
-}
-
-.switcher > *
-{
-	flex-grow                   : 1;
-	flex-basis                  : calc((var(--threshold) - 100%) * 999)
-}
-
-.text-align\:center
-{
-	text-align                  : center;
-}
-
-
-/* Color --------------------------------------------------------------------- */
-
-html
-{
-	--dark-purple               : hsl(273 85% 13%);
-	--davys-grey                : hsl(271 12% 34%);
-	--eucalyptus                : hsl(150 100% 63%);
-	--ghost-white               : hsl(276 100% 99%);
-	--white                     : hsl(0 0% 100%);
-}
-
-body
-{
-	color                       : var(--dark-purple);
-}
-
-::selection
-{
-	color                       : var(--dark-purple);
-	background-color            : var(--eucalyptus);
-}
-
-a
-{
-	color                       : inherit;
-	background-color            : transparent;
-}
-
-button
-{
-	color                       : var(--dark-purple);
-	background-color            : var(--eucalyptus);
-}
-
-button:hover
-{
-	color                       : var(--eucalyptus);
-	background-color            : var(--dark-purple);
-}
-
-header
-{
-	color                       : var(--white);
-	background-color            : var(--dark-purple);
-}
-
-main > div:first-child
-{
-	background-color            : var(--ghost-white);
-}
-
-/* Card */
-main > div > div > div
-{
-	color                       : var(--white);
-	background-color            : var(--dark-purple);
-}
-
-
-/* Decoration ---------------------------------------------------------------- */
-
-button
-{
-	transition                  : all 100ms ease-out;
-	&:hover
-	{
-		outline                 : 3px solid;
-	}
-
-	&:active
-	{
-		outline                 : 5px solid;
-	}
-}
-
-li
-{
-	list-style                  : none;
-	counter-increment           : count 1;
-}
-
-li::before
-{
-	border                      : 1px solid;
-	border-radius               : 50%;
-}
-
-/* Underline ------------------------- */
-a,
-span
-{
-	--color                     : var(--eucalyptus);
-}
-
-a
-{
-	color                       : inherit;
-	text-decoration             : inherit;
-}
+/* Underline ----------------------------------------------------------------- */
 
 .underline
 {
@@ -727,41 +677,49 @@ a.underline:active::after
 	width                       : 100%;
 }
 
-/* Section top decoration ------------ */
-main > div:first-child
+
+/* Utilities ----------------------------------------------------------------- */
+
+.center
 {
-	--color                     : var(--dark-purple);
+	margin-inline               : auto;
 }
 
-main > div:nth-child(2)
+.space-between,
+.switcher
 {
-	--color                     : var(--ghost-white);
+	display                     : flex;
 }
 
-main > div
+.space-between
 {
-	position                    : relative;
-	overflow                    : hidden;
-
-	&::before
-	{
-		content                 : "";
-
-		display                 : block;
-		aspect-ratio            : 1;
-		width                   : 525vw; /* Gotten from a mathematical formula */
-		position                : absolute;
-		top                     : -520.18vw;
-		left                    : 50%;
-		transform               : translateX(-50%);
-
-		background-color        : var(--color);
-
-		border-radius           : 50%;
-	}
+	justify-content             : space-between;
+	inline-size                 : 100%;
 }
 
-/* Pattern background ---------------- */
+.switcher
+{
+	/*                            768px*/
+	--threshold                 : 48rem;
+
+	flex-wrap                   : wrap;
+	/*                                       30px   */
+	gap                         : var(--gap, 1.875rem);
+}
+
+.switcher > *
+{
+	flex-grow                   : 1;
+	flex-basis                  : calc((var(--threshold) - 100%) * 999)
+}
+
+.text-align\:center
+{
+	text-align                  : center;
+}
+
+/* Decorative thingies ------------------------------------------------------- */
+
 @media screen and (min-width: 630px)
 {
 	header
