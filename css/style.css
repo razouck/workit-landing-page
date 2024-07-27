@@ -230,10 +230,9 @@ textarea
 body
 {
 	font-family                 : Manrope, sans-serif;
-	/*                            18px   */
-	font-size                   : 1.125rem;
-	/*                            32px*/
-	line-height                 : 1.778;
+	/*                                  16px                       18px    */
+	font-size                   : clamp(1rem, 0.956rem + 0.1878vw, 1.125rem);
+	line-height                 : 1.77;
 	color                       : var(--dark-purple);
 	accent-color                : var(--eucalyptus);
 }
