@@ -31,8 +31,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [](https://www.frontendmentor.io/solutions/workit-landing-page-razouck-DbfA7mF9F-)
-- Live Site URL: [](https://razouck.github.io/workit-landing-page/)
+- Solution URL: [https://www.frontendmentor.io/solutions/workit-landing-page-razouck-DbfA7mF9F-](https://www.frontendmentor.io/solutions/workit-landing-page-razouck-DbfA7mF9F-)
+- Live Site URL: [https://razouck.github.io/workit-landing-page/](https://razouck.github.io/workit-landing-page/)
 
 ## My process
 
