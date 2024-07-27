@@ -212,7 +212,7 @@ textarea
 {
 	/*                            96px*/
 	inline-size                 : 6rem;
-	/*                            25px    */
+	/*                            25px   */
 	block-size                  : 1.5625rem;
 	background-image            : url(../img/logo-dark.svg);
 	background-size             : cover;
@@ -317,7 +317,7 @@ h2, .heading-m
 {
 	/*                                  32px                        56px  */
 	font-size                   : clamp(2rem, 1.4718rem + 2.2535vw, 3.5rem);
-	/*                          37px*/
+	/*                            37px*/
 	line-height                 : 1.143;
 }
 
@@ -369,7 +369,7 @@ li::before
 	--size                      : clamp(3rem, 2.8239rem + 0.7512vw, 3.5rem);
 
 	font-family                 : "Fraunces 144pt", serif;
-	/*                                20px                          24px  */
+	/*                                  20px                          24px  */
 	font-size                   : clamp(1.25rem, 1.162rem + 0.3756vw, 1.5rem);
 	line-height                 : var(--size);
 }
@@ -379,9 +379,9 @@ li::before
 
 button
 {
-	/*                           32px*/
+	/*                            32px*/
 	padding-inline              : 2rem;
-	/*                           24px */
+	/*                            24px */
 	padding-block               : 1.5rem;
 }
 
@@ -389,32 +389,31 @@ header,
 footer,
 .container
 {
-	/*                                 16px                         165px     */
+	/*                                  16px                         165px     */
 	padding-inline              : clamp(1rem, -2.279rem + 13.9906vw, 10.3125rem);
 }
 
 header
 {
 	position                    : relative;
-	/*                                 32px                        56px  */
+	/*                                  32px                        56px  */
 	padding-block-start         : clamp(2rem, 1.4718rem + 2.2535vw, 3.5rem);
-	/*                                 139px                             258px    */
+	/*                                  139px                             258px    */
 	padding-block-end           : clamp(8.6875rem, 6.0687rem + 11.1737vw, 16.125rem);
-
 }
 
 /* Header text and button ------------ */
 header > div:nth-child(2)
 {
-	/*                                 343px                               635px     */
+	/*                                  343px                               635px     */
 	max-inline-size             : clamp(21.4375rem, 15.0114rem + 27.4178vw, 39.6875rem);
-	/*                                 55px                              64px*/
+	/*                                  55px                              64px*/
 	margin-block-start          : clamp(3.4375rem, 4.1981rem + -0.8451vw, 4rem);
 }
 
 header button
 {
-	/*                                 37px                             40px  */
+	/*                                  37px                             40px  */
 	margin-block-start          : clamp(2.3125rem, 2.566rem + -0.2817vw, 2.5rem);
 }
 
@@ -427,13 +426,13 @@ li::before
 
 li > h2
 {
-	/*                                 24px                          56px  */
+	/*                                  24px                          56px  */
 	margin-block-start          : clamp(1.5rem, 0.7958rem + 3.0047vw, 3.5rem);
 }
 
 li > p
 {
-	/*                                 16px                        28px   */
+	/*                                  16px                        28px   */
 	margin-block-start          : clamp(1rem, 0.7359rem + 1.1268vw, 1.75rem);
 }
 
@@ -441,19 +440,19 @@ li > p
 main > div:first-child
 {
 	counter-reset               : count 0;
-	/*                                 173px                              323px     */
+	/*                                  173px                              323px     */
 	padding-block-start         : clamp(10.8125rem, 7.5114rem + 14.0845vw, 20.1875rem);
-	/*                                 72px                          171px     */
-	padding-block-end           : clamp(4.5rem, 2.3213rem + 9.2958vw, 10.6875rem);
+	/*                                  72px                         101px     */
+	padding-block-end           : clamp(4.5rem, 3.8618rem + 2.723vw, 6.3125rem);
 }
 
 [alt="A cellphone"]
 {
 	position                    : absolute;
 	left                        : 50%;
-	/*                                                 50px                             64px */
+	/*                                                  50px                             64px */
 	transform                   : translate(-50%, clamp(3.125rem, 4.3081rem + -1.3146vw, 4rem));
-	/*                                 320px                          765px     */
+	/*                                  320px                          765px     */
 	inline-size                 : clamp(20rem, 10.1629rem + 41.9718vw, 47.9375rem);
 	z-index                     : 1;
 }
