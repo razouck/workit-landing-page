@@ -226,10 +226,10 @@ textarea
 
 .twitter-logo
 {
-	/*                            1.4375rem*/
-	inline-size                 : 23px;
-	/*                            1.25rem*/
-	block-size                  : 20px;
+	/*                            23px    */
+	inline-size                 : 1.4375rem;
+	/*                            20px  */
+	block-size                  : 1.25rem;
 	background-image            : url(../img/icon-twitter.svg);
 	background-size             : cover;
 }
@@ -461,12 +461,12 @@ main > div:first-child
 main > div > div
 {
 	position                    : relative;
-	/*                                 586px                              603px     */
+	/*                                  586px                              603px     */
 	min-block-size              : clamp(36.625rem, 38.0623rem + -1.5992vw, 37.6875rem);
 	/*                           1114px  */
 	max-inline-size             : 69.625rem;
 	margin-inline               : auto;
-	/*                                118px                           178px    */
+	/*                                  118px                           178px    */
 	margin-block-start          : clamp(7.375rem, 6.0521rem + 5.6444vw, 11.125rem);
 }
 
@@ -496,7 +496,7 @@ main > div:nth-child(2)
 main > div > div > div
 {
 	inline-size                 : fit-content;
-	/*                               32px                        64px*/
+	/*                                  32px                        64px*/
 	padding                     : clamp(2rem, 1.2958rem + 3.0047vw, 4rem);
 	position                    : absolute;
 	bottom                      : 0;
@@ -504,7 +504,7 @@ main > div > div > div
 
 	> * + *
 	{
-		/*                             24px                          32px*/
+		/*                              24px                          32px*/
 		margin-block-start      : clamp(1.5rem, 1.3239rem + 0.7512vw, 2rem);
 	}
 
@@ -516,6 +516,7 @@ main > div > div > div
 
 footer
 {
+	/*                                  129px                           139px    */
 	padding-block-end           : clamp(8.0625rem, 7.842rem + 0.9407vw, 8.6875rem);
 
 	> div
@@ -525,11 +526,13 @@ footer
 
 		&:nth-child(2)
 		{
+			/*                    60px  */
 			margin-block-start  : 3.75rem;
 		}
 
 		> * + *
 		{
+			/*                    28px  */
 			margin-inline-start : 1.75rem;
 		}
 	}
@@ -538,6 +541,7 @@ footer
 .icon
 {
 	display                     : inline-block;
+	/*                            20px  */
 	min-width                   : 1.25rem;
 	aspect-ratio                : 1;
 }
@@ -700,7 +704,6 @@ a
 	transition                  : all 100ms ease-out;
 }
 
-
 a.underline:active
 {
 	color                       : var(--color);
@@ -746,7 +749,7 @@ main > div
 
 		display                 : block;
 		aspect-ratio            : 1;
-		width                   : 525vw;
+		width                   : 525vw; /* Gotten from a mathematical formula */
 		position                : absolute;
 		top                     : -520.18vw;
 		left                    : 50%;
@@ -772,8 +775,10 @@ main > div
 	{
 		content                 : "";
 		display                 : block;
-		width                   : 221px;
-		height                  : 212px;
+		/*                        221px    */
+		width                   : 13.8125rem;
+		/*                        212px  */
+		height                  : 13.25rem;
 		position                : absolute;
 		right                   : 10%;
 		bottom                  : -15%;
